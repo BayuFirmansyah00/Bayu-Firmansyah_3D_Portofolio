@@ -1,0 +1,119 @@
+.other-section {
+  width: 100%;
+  padding: var(--space-8) 0;
+  box-sizing: border-box;
+}
+
+.other-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  max-width: 62ch;
+}
+
+.other-head .section-title {
+  margin: 0;
+}
+
+.other-lede {
+  margin: 0;
+  font-size: var(--fs-body);
+  color: var(--ink-soft);
+}
+
+.other-list {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  border-top: var(--rule);
+}
+
+.other-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.55fr) minmax(0, 2.1fr) minmax(0, 0.9fr);
+  gap: var(--space-5);
+  align-items: start;
+  padding: var(--space-5) 0;
+  border-bottom: var(--rule);
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.other-row:hover {
+  background-color: rgba(217, 213, 204, 0.22);
+}
+
+.other-period {
+  font-family: var(--font-display);
+  font-size: var(--fs-meta);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.other-row-main h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.other-row-main p {
+  margin: var(--space-2) 0 0;
+  max-width: 60ch;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.other-row-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  text-align: right;
+}
+
+.other-role {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--cobalt);
+}
+
+.other-category {
+  font-size: var(--fs-meta);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+@media only screen and (max-width: 1024px) {
+  .other-section {
+    padding: var(--space-7) 0;
+  }
+
+  .other-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-2);
+    padding: var(--space-4) 0;
+  }
+
+  .other-row-meta {
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .other-section {
+    padding: var(--space-6) 0;
+  }
+
+  .other-list {
+    margin-top: var(--space-5);
+  }
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="E-Cash — screenshot belum tersedia">
+  <rect width="800" height="500" fill="#F5F2EB"/>
+  <rect x="16.5" y="16.5" width="767" height="467" fill="none" stroke="#D9D5CC"/>
+  <line x1="16" y1="126" x2="784" y2="126" stroke="#D9D5CC"/>
+  <text x="48" y="80" font-family="'Space Grotesk', Inter, sans-serif" font-size="30" font-weight="600" fill="#20201E">E-Cash</text>
+  <text x="48" y="110" font-family="Inter, sans-serif" font-size="14" letter-spacing="3" fill="#8D897E">PROJECT BASED LEARNING</text>
+  <g transform="translate(400 292)">
+    <rect x="-72" y="-96" width="144" height="192" rx="16" fill="none" stroke="#20201E" stroke-width="2"/>
+    <line x1="-72" y1="-56" x2="72" y2="-56" stroke="#D9D5CC" stroke-width="2"/>
+    <rect x="-46" y="-36" width="92" height="10" rx="5" fill="#D9D5CC"/>
+    <rect x="-46" y="-14" width="64" height="10" rx="5" fill="#D9D5CC"/>
+    <rect x="-46" y="34" width="92" height="34" rx="8" fill="none" stroke="#3155D9" stroke-width="2"/>
+    <circle cx="0" cy="78" r="4" fill="#3155D9"/>
+  </g>
+  <text x="400" y="452" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" letter-spacing="2.5" fill="#8D897E">SCREENSHOT BELUM TERSEDIA</text>
+</svg>

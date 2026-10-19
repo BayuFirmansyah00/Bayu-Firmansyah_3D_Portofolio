@@ -1,0 +1,347 @@
+/* ============================================================
+   DESIGN TOKENS — "The Developer's Desk" editorial system
+   Warm ivory / charcoal / cobalt. Sharp, print-like, airy.
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Palette */
+  --ivory: #f5f2eb;
+  --charcoal: #20201e;
+  --cobalt: #3155d9;
+  --stone: #d9d5cc;
+  --white: #ffffff;
+
+  /* Derived neutrals (tints of the palette, not new hues) */
+  --ink-soft: #5c5951;
+  /* #8d897e hanya mencapai rasio 3.12:1 terhadap ivory (gagal WCAG AA untuk
+     teks 14px). #706d64 = 4.62:1 — tetap satu nada lebih terang dari ink-soft. */
+  --ink-faint: #706d64;
+  --line: #ddd8cc;
+  --line-strong: #c7c1b2;
+  --cobalt-ink: #2743ad;
+  --cobalt-light: #8ba0f2;
+
+  /* Semantic — legacy names kept so existing selectors stay valid */
+  --backgroundColor: var(--ivory);
+  --accentColor: var(--cobalt);
+  --surface: var(--white);
+  --text: var(--charcoal);
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --fs-hero: clamp(2.6rem, 6.6vw, 7rem);
+  --fs-section: clamp(2rem, 4.2vw, 4.25rem);
+  --fs-title: clamp(1.5rem, 2.1vw, 2.35rem);
+  --fs-lead: clamp(1.05rem, 1.45vw, 1.5rem);
+  --fs-body: clamp(0.95rem, 1.02vw, 1.125rem);
+  --fs-meta: clamp(0.68rem, 0.78vw, 0.8rem);
+
+  --lh-tight: 0.95;
+  --lh-snug: 1.2;
+  --lh-body: 1.65;
+  --tracking-label: 0.22em;
+
+  /* Spacing scale */
+  --space-1: 6px;
+  --space-2: 12px;
+  --space-3: 20px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 72px;
+  --space-7: 112px;
+  --space-8: 160px;
+
+  --gutter: clamp(20px, 4.5vw, 88px);
+
+  /* Structure */
+  --rule: 1px solid var(--line);
+  --radius-sharp: 2px;
+  --radius-soft: 4px;
+  --shadow-lift: 0 18px 50px -28px rgba(32, 32, 30, 0.35);
+
+  --cWidth: calc(100% - (2 * var(--gutter)));
+  --cMaxWidth: 1920px;
+  --vh: 100vh;
+  --vh: 100svh;
+
+  font-family: var(--font-body);
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: var(--lh-body);
+  scroll-behavior: smooth;
+  color-scheme: light;
+  color: var(--text);
+  background-color: var(--backgroundColor);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.015em;
+}
+
+/* ---------- Shared editorial primitives ---------- */
+
+/* Small uppercase label used above section titles */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--fs-meta);
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.6;
+}
+
+/* Big editorial section heading */
+.section-title {
+  font-size: var(--fs-section);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.section-title em {
+  font-style: normal;
+  color: var(--cobalt);
+}
+
+/* Numeric index used along project rows */
+.index-number {
+  font-family: var(--font-display);
+  font-size: var(--fs-meta);
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Text links / buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--charcoal);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--charcoal);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--charcoal);
+  color: var(--ivory);
+  transform: translateY(-2px);
+}
+
+.btn-solid {
+  background-color: var(--cobalt);
+  border-color: var(--cobalt);
+  color: var(--white);
+}
+
+.btn-solid:hover {
+  background-color: var(--cobalt-ink);
+  border-color: var(--cobalt-ink);
+  color: var(--white);
+}
+
+/* Inline tag (skills, tools) — flat, no glass */
+.tag {
+  display: inline-block;
+  padding: 6px 13px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  background-color: transparent;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.tag:hover {
+  border-color: var(--cobalt);
+  color: var(--cobalt);
+}
+
+/* Keyboard focus must always be visible */
+:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: 3px;
+  border-radius: var(--radius-sharp);
+}
+
+/* Skip link — tautan pertama di urutan tab, tersembunyi sampai difokus
+   lewat keyboard (WCAG 2.4.1). Tujuannya <main id="konten-utama">. */
+.skip-link {
+  position: fixed;
+  top: 14px;
+  left: 14px;
+  z-index: 9999999999;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background-color: var(--charcoal);
+  color: var(--ivory);
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transform: translateY(-260%);
+  transition: transform 0.2s ease-out;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Tujuan skip link jangan menyalakan outline raksasa di seluruh halaman. */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+}
+
+/* ---------- Base ---------- */
+
+body {
+  margin: 0;
+  height: auto;
+  background-color: var(--backgroundColor);
+  flex-grow: 1;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Allow scrolling on mobile */
+@media only screen and (max-width: 768px) {
+  body {
+    overflow: auto !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    touch-action: manipulation;
+  }
+
+  html {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    touch-action: manipulation;
+  }
+
+  /* Ensure no fixed elements block scrolling */
+  .container-main {
+    position: static !important;
+    height: auto !important;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--cobalt);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.main-active {
+  opacity: 0;
+  animation: fadeIn 1s 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.container-main {
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.section-container {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: auto;
+}
+
+.split-line {
+  overflow: hidden;
+}
+
+.split-h2 {
+  overflow: hidden;
+  display: flex;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,126 @@
+.techstack-new {
+  position: relative;
+  width: 100%;
+  padding: var(--space-8) 0;
+  background-color: var(--ivory);
+  overflow: hidden;
+}
+
+.techstack-new::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, var(--line) 1px, transparent 1px);
+  background-size: 25% 100%;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.techstack-content {
+  position: relative;
+  z-index: 1;
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.techstack-content .section-title {
+  margin: var(--space-3) 0 0;
+}
+
+.techstack-lede {
+  margin: var(--space-3) 0 0;
+  max-width: 40ch;
+  font-size: var(--fs-body);
+  color: var(--ink-soft);
+}
+
+.techstack-pyramid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  margin-top: var(--space-6);
+}
+
+.techstack-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.techstack-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 92px;
+  padding: 16px 8px;
+  border: var(--rule);
+  background-color: var(--white);
+  transition: border-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.techstack-item:hover {
+  border-color: var(--cobalt);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+.techstack-item img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.techstack-item span {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.techstack-item:hover span {
+  color: var(--cobalt);
+}
+
+@media only screen and (max-width: 768px) {
+  .techstack-new {
+    padding: var(--space-7) 0;
+  }
+
+  .techstack-new::before {
+    background-size: 50% 100%;
+  }
+
+  .techstack-pyramid {
+    margin-top: var(--space-5);
+    gap: var(--space-2);
+  }
+
+  .techstack-item {
+    width: 78px;
+    padding: 12px 6px;
+  }
+
+  .techstack-item img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .techstack-item span {
+    font-size: 0.62rem;
+  }
+}

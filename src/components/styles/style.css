@@ -1,0 +1,24 @@
+/* Sliding label used by nav links and the CTA button */
+.hover-link {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.hover-in {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.hover-in div {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.hover-link:hover .hover-in {
+  transform: translateY(-100%);
+  color: var(--cobalt);
+}

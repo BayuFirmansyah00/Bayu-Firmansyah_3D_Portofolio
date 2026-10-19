@@ -1,0 +1,59 @@
+.icons-section {
+  position: fixed;
+  max-width: var(--cMaxWidth);
+  width: var(--cWidth);
+  bottom: 0;
+  z-index: 99;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.social-icons {
+  position: absolute;
+  left: -14px;
+  bottom: 26px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+  pointer-events: auto;
+}
+
+.social-icons span {
+  width: 46px;
+  height: 46px;
+  position: relative;
+  display: flex;
+}
+
+.social-icons a {
+  --siLeft: 50%;
+  --siTop: 50%;
+  position: absolute;
+  left: var(--siLeft, 50%);
+  top: var(--siTop, 50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--charcoal);
+  will-change: left, top;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--cobalt);
+}
+
+@media only screen and (min-width: 900px) {
+  .social-icons {
+    display: flex;
+    gap: 18px;
+  }
+
+  .social-icons a {
+    font-size: 25px;
+  }
+}

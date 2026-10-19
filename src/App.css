@@ -1,0 +1,11 @@
+/* Section width is owned by the design tokens in index.css.
+   This file only carries text-rendering polish for split-text blocks. */
+.title,
+.para {
+  font-kerning: normal;
+  -webkit-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  word-spacing: 0.1em;
+}

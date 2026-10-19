@@ -1,0 +1,56 @@
+.cursor-main {
+  --size: 0px;
+  position: fixed;
+  top: calc(var(--size) / -2);
+  left: calc(var(--size) / -2);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50px;
+  pointer-events: none;
+  z-index: 99;
+  border: 1px solid var(--cobalt);
+  background-color: transparent;
+  transition: top 0.3s ease-out, left 0.3s ease-out, width 0.3s ease-out,
+    height 0.3s ease-out;
+}
+
+.cursor-icons {
+  top: 10px;
+  left: 10px;
+  height: calc(var(--cursorH) - 20px);
+  background-color: rgba(49, 85, 217, 0.08);
+  transition: all 0.5s ease-out, height 0.5s ease-in-out;
+}
+
+.cursor-disable {
+  --size: 0px;
+}
+
+/* Lingkaran hanya boleh muncul setelah benar-benar ada gerakan mouse.
+   Sebelumnya ia terlihat menempel di pojok kiri atas (0,0) sampai mouse
+   bergerak — terlihat jelas di perangkat sentuh yang tak pernah mengirim
+   mousemove sama sekali. */
+.cursor-main {
+  visibility: hidden;
+}
+
+.cursor-main.cursor-active {
+  visibility: visible;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-main,
+  .cursor-main.cursor-active {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .cursor-main {
+    --size: 44px;
+  }
+
+  .cursor-disable {
+    --size: 0px;
+  }
+}

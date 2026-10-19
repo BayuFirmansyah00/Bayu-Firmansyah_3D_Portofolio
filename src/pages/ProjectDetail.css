@@ -1,0 +1,243 @@
+.project-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: var(--space-6) 0 var(--space-8);
+  box-sizing: border-box;
+  background-color: var(--backgroundColor);
+}
+
+.project-container {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: auto;
+}
+
+.project-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.project-back:hover {
+  color: var(--cobalt);
+  transform: translateX(-3px);
+}
+
+/* ---------- Header ---------- */
+
+.project-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  max-width: 78ch;
+  margin-top: var(--space-5);
+  padding-bottom: var(--space-5);
+  border-bottom: var(--rule);
+}
+
+.project-head .section-title {
+  margin: 0;
+}
+
+.project-lede {
+  margin: 0;
+  max-width: 62ch;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink-soft);
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-meta li {
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+}
+
+/* ---------- Sections ---------- */
+
+.project-section {
+  margin-top: var(--space-7);
+}
+
+.project-section-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.project-section-head h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-title);
+  font-weight: 500;
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+}
+
+.project-section-head h2 em {
+  font-style: italic;
+  color: var(--cobalt);
+}
+
+.project-note {
+  margin: 0 0 var(--space-4);
+  max-width: 68ch;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--ink-faint);
+}
+
+/* ---------- Role tabs ---------- */
+
+.role-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--rule);
+}
+
+.role-tab {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 10px 20px;
+  border: 1px solid var(--line-strong);
+  background-color: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.25s ease, border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.role-tab:hover {
+  color: var(--charcoal);
+  border-color: var(--charcoal);
+}
+
+.role-tab.is-active {
+  color: var(--ivory);
+  background-color: var(--charcoal);
+  border-color: var(--charcoal);
+}
+
+.role-tab-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.role-tab-count {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.role-tab.is-active .role-tab-count {
+  color: var(--stone);
+}
+
+.role-panel {
+  margin-top: var(--space-5);
+}
+
+.role-summary {
+  margin: 0 0 var(--space-4);
+  max-width: 62ch;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink-soft);
+}
+
+/* ---------- Footer / empty state ---------- */
+
+.project-empty {
+  margin: var(--space-6) 0 0;
+  max-width: 62ch;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink-soft);
+}
+
+.project-footer {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: var(--rule);
+}
+
+.project-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  background-color: var(--charcoal);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-cta:hover {
+  background-color: var(--cobalt);
+  transform: translateY(-2px);
+}
+
+@media screen and (max-width: 768px) {
+  .project-page {
+    padding-top: var(--space-5);
+  }
+
+  .role-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: var(--space-2);
+  }
+
+  .role-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .role-tab {
+    flex: 0 0 auto;
+    padding: 9px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-back,
+  .role-tab,
+  .project-cta {
+    transition: none;
+  }
+
+  .project-back:hover,
+  .project-cta:hover {
+    transform: none;
+  }
+}

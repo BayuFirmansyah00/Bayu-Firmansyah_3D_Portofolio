@@ -1,0 +1,64 @@
+.cta-section {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: auto;
+  padding: var(--space-8) 0;
+  display: flex;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 40ch;
+}
+
+.cta-inner .section-title {
+  margin: var(--space-3) 0 0;
+}
+
+.cta-lede {
+  margin: var(--space-4) 0 0;
+  font-size: var(--fs-body);
+  color: var(--ink-soft);
+}
+
+.cta-buttons {
+  margin-top: var(--space-5);
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 34px;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--ivory);
+  background-color: var(--cobalt);
+  border: 1px solid var(--cobalt);
+  border-radius: 999px;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--ivory);
+  transform: translateY(-2px);
+}
+
+@media only screen and (max-width: 768px) {
+  .cta-section {
+    padding: var(--space-7) 0;
+  }
+
+  .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
